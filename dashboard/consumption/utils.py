@@ -88,7 +88,8 @@ class DataLoader:
 
 class Validator:
     def __init__(self, file_path: str):
-        self.df = pd.read_csv(file_path)    
+        self.file_path = file_path
+        self.df = pd.read_csv(self.file_path)    
         self.fields = None
         self.dtypes = None
         self.invalids = {"invalid_field":[], "invalid_dtype":[]}
@@ -119,7 +120,7 @@ class Validator:
         if self._is_valid_fields() and self._is_valid_dtypes():
             return True
         else:
-            print(f"{file_path} is invalid.")
+            print(f"{self.file_path} is invalid.")
             print(f"invalids:{self.invalids}")
             return False
         
