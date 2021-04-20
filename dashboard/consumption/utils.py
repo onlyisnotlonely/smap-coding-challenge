@@ -144,7 +144,7 @@ class ConsumptionValidator(Validator):
             try:
                 return [type(dt.strptime(values[0], '%Y-%m-%d %H:%M:%S')), type(values[1])]
             except ValueError:
-                print(f"error.")
+                return [type(None), type(values[1])]
         else:
             return [type(value) for value in values]
 
