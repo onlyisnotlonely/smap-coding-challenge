@@ -1,7 +1,7 @@
 from django.test import TestCase, TransactionTestCase
 from django.test.client import RequestFactory
 from consumption.views import summary, detail
-from consumption.utils import DataLoader, Aggregater
+from consumption.utils import DataLoader
 
 class TestViews(TestCase):
     def setUp(self):
