@@ -1,7 +1,19 @@
 {% extends 'consumption/layout.html' %}
 
+{% block head%}
+<!-- plotly JS Files -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<h1>{{message}}</h1>
+{% endblock %}
+
 {% block content %}
 
-<h1>{{message}}</h1>
+{% autoescape off %}
+{{graph_monthly}}
+{{graph_weekly}}
+{{graph_daily}}
+{{table_title}}
+{{table}}
+{% endautoescape %}
 
 {% endblock %}
